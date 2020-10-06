@@ -51,7 +51,16 @@ teams_message_card(
 
 for potential_action for the type don't forget the '@'  like that "@type"
 
-**Note to author:** Please set up a sample project to make it easy for users to explore what your plugin does. Provide everything that is necessary to try out the plugin in this project (including a sample Xcode/Android project if necessary)
+## Potential action Availbale
+
+
+| @type | description |
+| ------ | ------ |
+| OpenUri | Open a URI in another browser or application. |
+| HttpPOST | Calls to an external web service. |
+| ActionCard | Presents the additional user interface which contains one or more entries, as well as the associated actions which can be of type OpenUri or HttpPOST. |
+| InvokeAddInCommand | Opens the task pane of an Outlook add-in. If the add-in is not installed, the user is prompted to install it with one click. |
+
 
 ## Run tests for this plugin
 
