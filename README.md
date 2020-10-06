@@ -61,6 +61,53 @@ for potential_action for the type don't forget the '@'  like that "@type"
 | ActionCard | Presents the additional user interface which contains one or more entries, as well as the associated actions which can be of type OpenUri or HttpPOST. |
 | InvokeAddInCommand | Opens the task pane of an Outlook add-in. If the add-in is not installed, the user is prompted to install it with one click. |
 
+### OpenUri example
+
+```
+potential_action:[
+              {
+                "@type": "OpenUri",
+                "name": "View in TEST",
+                "targets": [
+                  { 
+                    "os": "default", 
+                    "uri": "https://github.com/cheignon/fastlane-plugin-microsft_teams_message_card/edit/main/README.md"
+                  }
+                ]
+              }
+            ]
+```
+### HttpPOST example
+HttpPOST can't be use alone, you need to use ActionCard type before,like that :
+```
+potential_action:[
+
+{
+  "@type": "ActionCard",
+  "name": "Comment",
+  "inputs": [
+    {
+      "@type": "TextInput",
+      "id": "comment",
+      "isMultiline": true,
+      "title": "Input's title property"
+    }
+  ],
+  "actions": [
+    {
+      "@type": "HttpPOST",
+      "name": "Action's name prop.",
+      "target": "https://yammer.com/comment?postId=123",
+      "body": "comment={{comment.value}}"
+    }
+  ]
+}
+
+```
+
+### More example 
+
+the documatation is on [_Legacy actionable message card reference_](https://docs.microsoft.com/en-us/outlook/actionable-messages/message-card-reference)
 
 ## Run tests for this plugin
 
