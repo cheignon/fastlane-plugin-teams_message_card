@@ -17,8 +17,39 @@ Send a message card to your Microsoft teams channel
 **Note to author:** Add a more detailed description about this plugin here. If your plugin contains multiple actions, make sure to mention them here.
 
 ## Example
+```
+teams_message_card(
+            title: "test title",
+            summary: "test summary",
+            text: "test text",
+            activity_title: "test activity_title",
+            activity_subtitle: Time.now.strftime("%d/%m/%Y %H:%M"),
+            activity_image: "test activity_image (must be start with https)",
+            theme_color: 8e8e93,
+            facts:[
+              {
+                "name"=>"Platform",
+                "value"=> ios
+              }
+            ],
+            potential_action:[
+              {
+                "@type": "OpenUri",
+                "name": "View in TEST",
+                "targets": [
+                  { 
+                    "os": "default", 
+                    "uri": "https://github.com/cheignon/fastlane-plugin-microsft_teams_message_card/edit/main/README.md"
+                  }
+                ]
+              },
+              ...
+            ],
+            teams_url: "https://outlook.office.com/webhook/..."
+          )
+```
 
-Check out the [example `Fastfile`](fastlane/Fastfile) to see how to use this plugin. Try it by cloning the repo, running `fastlane install_plugins` and `bundle exec fastlane test`.
+for potential_action for the type don't forget the '@'  like that "@type"
 
 **Note to author:** Please set up a sample project to make it easy for users to explore what your plugin does. Provide everything that is necessary to try out the plugin in this project (including a sample Xcode/Android project if necessary)
 
